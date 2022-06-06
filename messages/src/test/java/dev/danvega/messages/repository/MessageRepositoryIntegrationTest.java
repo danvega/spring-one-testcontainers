@@ -15,8 +15,8 @@ class MessageRepositoryIntegrationTest {
     MessageRepository repository;
 
     @Test
-    void contextLoads() {
-        assertNotNull(repository);
+    void shouldFindAll5Messages() {
+        assertEquals(5, StreamSupport.stream(repository.findAll().spliterator(),false).count());
     }
 
 }
